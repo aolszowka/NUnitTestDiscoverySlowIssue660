@@ -1,12 +1,10 @@
 ﻿using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace TestLibrary1
 {
+    [Parallelizable(ParallelScope.All)]
     [TestFixture]
     public class TestLibrary1
     {
@@ -18,7 +16,7 @@ namespace TestLibrary1
 
         public static IEnumerable<TestCaseData> Tests()
         {
-            for (int i = 0; i < 100000; i++)
+            for (int i = 0; i < 50000; i++)
             {
                 yield return new TestCaseData().SetName($"TestNumber{i}");
             }
